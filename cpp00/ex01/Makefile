@@ -6,15 +6,15 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 20:26:41 by mjiam         #+#    #+#                  #
-#    Updated: 2020/07/28 17:06:13 by mjiam         ########   odam.nl          #
+#    Updated: 2020/07/29 21:29:52 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= brownpages
 
-SRC		= contact.cpp main.cpp
+SRC		= contact.cpp main.cpp field.cpp
 
-HEADER	= contact.hpp
+HEADER	= contact.hpp field.hpp
 
 OBJ		= $(SRC:.cpp=.o)
 

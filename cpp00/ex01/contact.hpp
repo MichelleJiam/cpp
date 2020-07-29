@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 11:58:14 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/28 18:49:54 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/07/29 21:29:07 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
  # define CONTACT_H
 
 #include <string>
+#include "field.hpp"
 
 class contact {
 public:
@@ -23,12 +24,14 @@ public:
     int         getindex(void) const;
     std::string getinformation(int field) const;
     void        showinformation(std::string info) const;
+    static void printfield(int field);
 
     void        setindex(int index);
     void        setinformation(std::string input, int field);
 
 private:
     int         _index;
+    field       _fields[11];
     std::string _firstname;
     std::string _lastname;
     std::string _nickname;
