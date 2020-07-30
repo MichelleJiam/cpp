@@ -6,42 +6,48 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 20:26:41 by mjiam         #+#    #+#                  #
-#    Updated: 2020/07/29 21:29:52 by mjiam         ########   odam.nl          #
+#    Updated: 2020/07/30 13:51:54 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= brownpages
+NAME	= 	brownpages
 
-SRC		= contact.cpp main.cpp field.cpp
+SRC		= 	contact.cpp main.cpp field.cpp
 
-HEADER	= contact.hpp field.hpp
+HEADER	= 	contact.hpp field.hpp
 
-OBJ		= $(SRC:.cpp=.o)
+OBJ		= 	$(SRC:.cpp=.o)
 
-CC		= clang++
+CC		= 	clang++
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= 	-Wall -Wextra -Werror
+
+# COLORS
+CYAN	= 	\033[0;36m
+PURPLE	= 	\033[0;35m
+BLUE	= 	\033[0;34m
+RESET	= 	\033[0m
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "Compiling: $(SRC)"
+	@echo "Compiling: $(PURPLE)$(SRC)$(RESET)"
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-	@echo "Executable $(NAME) made"
+	@echo "Executable $(CYAN)$(NAME)$(RESET) made"
 
 %.o: %.cpp
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@echo "Cleaning"
+	@echo "$(BLUE)Cleaning$(RESET)"
 	@rm -rf $(OBJ)
 
 fclean: clean
-	@echo "Clean af"
+	@echo "$(BLUE)Clean af$(RESET)"
 	@rm -rf $(NAME)
 
 re:
-	@echo "Once more from the top"
+	@echo "$(BLUE)Once more from the top$(RESET)"
 	@$(MAKE) fclean
 	@$(MAKE) all
 
