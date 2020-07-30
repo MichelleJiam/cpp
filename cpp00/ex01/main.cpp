@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 20:47:09 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/29 14:44:40 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/07/30 11:39:22 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,6 @@
 #include <string>
 #include <locale>
 #include "contact.hpp"
-
-void    printfield(int field) {
-    switch (field) {
-        case 0: std::cout << "first name: ";
-                break;
-        case 1: std::cout << "last name: ";
-                break;
-        case 2: std::cout << "nickname: ";
-                break;
-        case 3: std::cout << "login: ";
-                break;
-        case 4: std::cout << "postal address: ";
-                break;
-        case 5: std::cout << "email address: ";
-                break;
-        case 6: std::cout << "phone number: ";
-                break;
-        case 7: std::cout << "date of birth: ";
-                break;
-        case 8: std::cout << "favourite meal: ";
-                break;
-        case 9: std::cout << "underwear colour: ";
-                break;
-        case 10: std::cout << "darkest secret: ";
-                break;
-    }
-    return;
-}
 
 void    printshortlist(contact &contact) {
     for (int i = -1; i < 3; i++) {
@@ -73,7 +45,7 @@ void    searchcontact(contact contacts[8], int index, std::string *input) {
         std::cout << "Index specified does not exist." << std::endl;
     else {
         for (int field = 0; field < 11; field++) {
-            printfield(field);
+            std::cout << contacts[in].printfield(field) << ": ";
             std::cout << contacts[in].getinformation(field) << std::endl;
         }
     } 
@@ -82,7 +54,7 @@ void    searchcontact(contact contacts[8], int index, std::string *input) {
 
 void    fillcontact(contact &contact, std::string *input, int field) {
     std::cout << "Please enter contact's ";
-    printfield(field);
+    std::cout << contact.printfield(field) << ": ";
     std::cout << std::endl;
     std::getline(std::cin, *input);
     contact.setinformation(*input, field);
