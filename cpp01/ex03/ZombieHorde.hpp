@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   ZombieHorde.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/30 14:37:22 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/03 21:29:11 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/03 21:00:21 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/03 21:31:45 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef ZOMBIE_HORDE_H
+# define ZOMBIE_HORDE_H
 
-class Zombie {
+#include <iostream>
+#include "Zombie.hpp"
+
+class ZombieHorde {
 public:
-	Zombie(std::string name, std::string type);
-	Zombie(void);
-	~Zombie(void);
+    ZombieHorde(int N);
+    ~ZombieHorde(void);
 
-	void		announce(void) const;
-	void		setname(std::string name);
-	void		settype(std::string type);
+    void    announce(void) const;
 
 private:
-	std::string	_type;
-	std::string	_name;
+    Zombie      *_zombies;
+    std::string zombieNamer(void);
 };
 
 #endif

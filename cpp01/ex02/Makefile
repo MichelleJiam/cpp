@@ -6,15 +6,15 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 20:26:41 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/03 14:34:28 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/03 16:47:24 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	brownpages
+NAME	= 	zombie
 
-SRC		= 	main.cpp contact.cpp field.cpp
+SRC		= 	main.cpp Zombie.cpp ZombieEvent.cpp
 
-HEADER	= 	contact.hpp field.hpp
+HEADER	= 	Zombie.hpp ZombieEvent.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 
