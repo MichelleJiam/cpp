@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 20:33:32 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/30 11:38:00 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/03 12:41:43 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ field::field(void){
 field::~field(void) {
 }
 
-std::string	field::getname(int field) const {
+std::string	field::getname(void) const {
 	return this->_name;
 }
 
-std::string	field::getvalue(int field) const {
+std::string	field::getvalue(void) const {
 	return this->_value;
 }
 

@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 20:26:41 by mjiam         #+#    #+#                  #
-#    Updated: 2020/07/30 13:51:54 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/03 12:47:11 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ		= 	$(SRC:.cpp=.o)
 
 CC		= 	clang++
 
-FLAGS	= 	-Wall -Wextra -Werror
+FLAGS	= 	-Wall -Wextra -Werror -std=c++98
 
 # COLORS
 CYAN	= 	\033[0;36m

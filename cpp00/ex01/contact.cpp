@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/28 12:17:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/30 11:37:32 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/03 12:42:05 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int         contact::getindex(void) const {
 }
 
 std::string contact::getinformation(int field) const {
-    return this->_fields[field].getvalue(field);
+    return this->_fields[field].getvalue();
 }
 
 std::string contact::printfield(int field) const {
-    return this->_fields[field].getname(field);
+    return this->_fields[field].getname();
 }
 
 void        contact::showinformation(std::string input) const {

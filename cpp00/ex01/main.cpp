@@ -6,15 +6,28 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/27 20:47:09 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/30 11:39:22 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/03 13:39:21 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <locale>
+#include <cctype>
 #include "contact.hpp"
+
+int     inputcheck(int check, std::string input, int c) {
+    if (check == 1 && !(input).length()) {
+        std::cout << "Empty input. Please provide input." << std::endl;
+        return 1;
+    }
+    else if (check == 2 && !std::isdigit(c)) {
+        std::cout << "Invalid input. Please enter a number." << std::endl;
+        return 2;
+    }
+    else
+        return 0;
+}
 
 void    printshortlist(contact &contact) {
     for (int i = -1; i < 3; i++) {
@@ -34,11 +47,11 @@ void    searchcontact(contact contacts[8], int index, std::string *input) {
         printshortlist(contacts[i]);
     std::cout << "Please enter index of contact to look up." << std::endl;
     std::getline(std::cin, *input);
-    for (int i = 0; (*input)[i]; i++) {
-        if (!std::isdigit((*input)[i])) {
-            std::cout << "Invalid input. Please enter a number." << std::endl;
+    if (inputcheck(1, *input, 0)) // check for empty input
+        return;
+    for (size_t i = 0; (*input)[i]; i++) {
+        if (inputcheck(2, *input, (*input)[i]) == 2) // check for non-number
             return;
-        }
     }
     int in = std::atoi((*input).c_str());
     if (in < 0 || in >= index)
@@ -57,6 +70,10 @@ void    fillcontact(contact &contact, std::string *input, int field) {
     std::cout << contact.printfield(field) << ": ";
     std::cout << std::endl;
     std::getline(std::cin, *input);
+    if (inputcheck(1, *input, 0)) {  // check for empty input
+        (*input).clear();
+        fillcontact(contact, input, field);
+    }
     contact.setinformation(*input, field);
 }
 
@@ -81,7 +98,7 @@ int     checkinput(std::string input) {
 
 int     promptinput(std::string *input, int *command) {
     *command = 1;
-    std::cout << "Please enter one of these commands: ADD, SEARCH, EXIT" << std::endl;
+    std::cout << "\nPlease enter one of these commands: ADD, SEARCH, EXIT" << std::endl;
     std::getline(std::cin, *input);
     if (!(*command = checkinput(*input))) {
         (*input).clear();

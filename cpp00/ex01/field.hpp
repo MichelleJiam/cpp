@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 20:38:20 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/30 11:38:10 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/03 12:41:54 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ public:
 	field(void);
 	~field(void);
 
-	std::string getname(int field) const;
-	std::string	getvalue(int field) const;
+	std::string getname(void) const;
+	std::string	getvalue(void) const;
 
 	void		setname(std::string name);
 	void		setvalue(std::string input);
