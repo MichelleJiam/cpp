@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 16:18:47 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 19:28:48 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/05 21:15:09 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,20 @@ void    searchndestroy(std::string &line, std::string const &s1, std::string con
 int     replace(std::string const &file, std::string const &s1, std::string const &s2) {
     std::string     outfile(file + ".replace");
     std::ifstream   input(file.c_str());
+    if (input.fail())
+        return error("failed to open input file");
     std::ofstream   output(outfile.c_str(), std::ios::trunc);
-    if (input.fail() || output.fail())
-        return error("failed to open file");
-    while (!input.eof()) {
-        std::string line;
-        getline(input, line);
+    if (output.fail())
+        return error("failed to open output file");
+    std::string line;
+    while (getline(input, line)) {
         if (input.fail())
             return error("failed to read from file");
         if (!input.eof())
             line.append("\n");
         searchndestroy(line, s1, s2);
         output << line;
+        line.clear();
     }
     return 0;
 }
