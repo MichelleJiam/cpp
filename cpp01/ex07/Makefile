@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/05 20:51:45 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/05 21:10:14 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME): $(OBJ) $(HEADER)
 	@echo "--------------------------------------------------------------"
 	@echo "|  make $(CYAN)test1$(RESET): s1 is \"thirty-five is\", s2 is \"old af is\"      |"
 	@echo "|  make $(CYAN)test2$(RESET): s1 is \"Anything that\", s2 is \"Everything that\" |"
-	@echo "|  make $(CYAN)test3$(RESET): s1 is \"against the natural order of things\"     |"
+	@echo "|  make $(CYAN)test3$(RESET): s1 is \"against the natural order of things\"    |"
 	@echo "               s2 is \"weird af and honestly kids these days\"  |"
 	@echo "--------------------------------------------------------------"
 
