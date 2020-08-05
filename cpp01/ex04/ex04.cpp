@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   const.hpp                                          :+:    :+:            */
+/*   ex04.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 17:00:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 14:32:43 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/04 12:51:51 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/04 12:55:10 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_H
-# define CONST_H
+#include <iostream>
 
-class test {
-public:
-    float const pi;
-    int         value;
+int main(void) {
+    std::string string = "HI THIS IS BRAIN";
+    std::string *stringptr = &string;
+    std::string &stringref = string;
 
-    test(float const f);
-    ~test(void);
-    
-    void        fn(void) const;
-    test const  *identifyptr() const;
-    // test const  &identifyref() const;
-};
-
-#endif
+    std::cout << "This is the string :   " << string << std::endl;
+    std::cout << "This is the pointer:   " << *stringptr << std::endl;
+    std::cout << "THis is the reference: " << stringref << std::endl;
+    return 0;
+}

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   const.hpp                                          :+:    :+:            */
+/*   HumanB.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 17:00:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 14:32:43 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/05 14:41:49 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/05 17:54:20 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_H
-# define CONST_H
+#ifndef HUMAN_B_H
+# define HUMAN_B_H
 
-class test {
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanB {
 public:
-    float const pi;
-    int         value;
+    HumanB(std::string name);
+    ~HumanB(void);
 
-    test(float const f);
-    ~test(void);
-    
-    void        fn(void) const;
-    test const  *identifyptr() const;
-    // test const  &identifyref() const;
+    void            attack(void) const;
+    void            setWeapon(Weapon &weapon);
+
+private:
+    std::string     _name;
+    Weapon const    *_weapon; 
+        // const: _weapon itself is changeable as a ptr, but not what it points to
 };
 
 #endif

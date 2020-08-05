@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 21:00:21 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/03 21:31:45 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/04 12:49:17 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     ZombieHorde(int N);
     ~ZombieHorde(void);
 
-    void    announce(void) const;
+    void        announceHorde(int N) const;
 
 private:
     Zombie      *_zombies;

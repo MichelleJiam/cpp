@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   const.hpp                                          :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 17:00:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 14:32:43 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/04 12:36:58 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/04 12:49:27 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_H
-# define CONST_H
+#include "ZombieHorde.hpp"
 
-class test {
-public:
-    float const pi;
-    int         value;
-
-    test(float const f);
-    ~test(void);
-    
-    void        fn(void) const;
-    test const  *identifyptr() const;
-    // test const  &identifyref() const;
-};
-
-#endif
+int main(void) {
+    ZombieHorde small(3);
+    std::cout << std::endl;
+    ZombieHorde big(7);
+    return 0;
+}

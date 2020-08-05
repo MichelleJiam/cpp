@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 14:47:35 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/03 20:57:24 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/04 12:35:44 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 ZombieEvent::ZombieEvent(void) {
 	std::cout << "A zombie apocalypse is upon us." << std::endl;
+	return;
 }
 
 ZombieEvent::~ZombieEvent(void) {
 	std::cout << "\nThe zombie apocalypse is over." << std::endl;
+	return;
 }
 
 Zombie	*ZombieEvent::newZombie(std::string name) {
@@ -48,4 +50,5 @@ Zombie	*ZombieEvent::randomChump(void) {
 
 void	ZombieEvent::setZombieType(std::string type) {
 	this->_eventType = type;
+	return;
 }

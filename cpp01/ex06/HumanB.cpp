@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   const.hpp                                          :+:    :+:            */
+/*   HumanB.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 17:00:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 14:32:43 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/05 14:41:10 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/05 16:17:06 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_H
-# define CONST_H
+#include "HumanB.hpp"
 
-class test {
-public:
-    float const pi;
-    int         value;
+HumanB::HumanB(std::string name) {
+    this->_name = name;
+    return;
+}
 
-    test(float const f);
-    ~test(void);
-    
-    void        fn(void) const;
-    test const  *identifyptr() const;
-    // test const  &identifyref() const;
-};
+HumanB::~HumanB(void) {
+}
 
-#endif
+void    HumanB::attack(void) const {
+    std::cout << this->_name << " is about to get violent with his " <<
+        this->_weapon->getType() << std::endl;
+    return;
+}
+
+void    HumanB::setWeapon(Weapon &weapon) {
+    this->_weapon = &weapon;
+    return;
+}

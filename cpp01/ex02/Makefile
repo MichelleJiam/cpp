@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/27 20:26:41 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/03 16:47:24 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/05 16:04:15 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ RESET	= 	\033[0m
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HEADER)
 	@echo "Compiling: $(PURPLE)$(SRC)$(RESET)"
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@echo "Executable $(CYAN)$(NAME)$(RESET) made"

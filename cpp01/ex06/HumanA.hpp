@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   const.hpp                                          :+:    :+:            */
+/*   HumanA.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 17:00:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 14:32:43 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/05 14:41:20 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/05 17:54:44 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_H
-# define CONST_H
+#ifndef HUMAN_A_H
+# define HUMAN_A_H
 
-class test {
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanA {
 public:
-    float const pi;
-    int         value;
+    HumanA(std::string name, Weapon &weapon);
+    ~HumanA(void);
 
-    test(float const f);
-    ~test(void);
-    
-    void        fn(void) const;
-    test const  *identifyptr() const;
-    // test const  &identifyref() const;
+    void            attack(void) const;
+
+private:
+    std::string     _name;
+    Weapon const    &_weapon;
+        // const: _weapon itself is changeable as a ref, but not what it refers to
 };
 
 #endif

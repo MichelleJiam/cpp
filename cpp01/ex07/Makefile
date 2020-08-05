@@ -5,16 +5,16 @@
 #                                                      +:+                     #
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/07/27 20:26:41 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/05 16:04:11 by mjiam         ########   odam.nl          #
+#    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
+#    Updated: 2020/08/05 19:23:49 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	forthehorde
+NAME	= 	replace
 
-SRC		= 	main.cpp Zombie.cpp ZombieHorde.cpp
+SRC		= 	replace.cpp
 
-HEADER	= 	Zombie.hpp ZombieHorde.hpp
+TEST	= 	test
 
 OBJ		= 	$(SRC:.cpp=.o)
 
@@ -33,7 +33,28 @@ all: $(NAME)
 $(NAME): $(OBJ) $(HEADER)
 	@echo "Compiling: $(PURPLE)$(SRC)$(RESET)"
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-	@echo "Executable $(CYAN)$(NAME)$(RESET) made"
+	@echo "Executable $(CYAN)$(NAME)$(RESET) made. Run one of the following tests:"
+	@echo "--------------------------------------------------------------"
+	@echo "|  make $(CYAN)test1$(RESET): s1 is \"thirty-five is\", s2 is \"old af is\"      |"
+	@echo "|  make $(CYAN)test2$(RESET): s1 is \"Anything that\", s2 is \"Everything that\" |"
+	@echo "|  make $(CYAN)test3$(RESET): s1 is \"against the natural order of things     |"
+	@echo "               s2 is \"weird af and honestly kids these days\"  |"
+	@echo "--------------------------------------------------------------"
+
+test1: $(NAME)
+	@echo "Running $(CYAN)$@$(RESET)$(BLUE)"
+	./$(NAME) $(TEST) "thirty-five is" "old af is"
+	diff $@ $(TEST).replace
+
+test2: $(NAME)
+	@echo "Running $(CYAN)$@$(RESET)$(BLUE)"
+	./$(NAME) $(TEST) "Anything that" "Everything that"
+	diff $@ $(TEST).replace
+
+test3: $(NAME)
+	@echo "Running $(CYAN)$@$(RESET)$(BLUE)"
+	./$(NAME) $(TEST) "against the natural order of things" "weird af and honestly kids these days.."
+	diff $@ $(TEST).replace
 
 %.o: %.cpp
 	@$(CC) $(FLAGS) -c $< -o $@
@@ -44,7 +65,7 @@ clean:
 
 fclean: clean
 	@echo "$(BLUE)Clean af$(RESET)"
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) test.replace
 
 re:
 	@echo "$(BLUE)Once more from the top$(RESET)"

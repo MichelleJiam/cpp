@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   const.hpp                                          :+:    :+:            */
+/*   HumanA.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 17:00:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 14:32:43 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/05 14:41:03 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/05 16:16:56 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_H
-# define CONST_H
+#include "HumanA.hpp"
 
-class test {
-public:
-    float const pi;
-    int         value;
+HumanA::HumanA(std::string name, Weapon &weapon)
+    : _name(name), _weapon(weapon) {
+}
 
-    test(float const f);
-    ~test(void);
-    
-    void        fn(void) const;
-    test const  *identifyptr() const;
-    // test const  &identifyref() const;
-};
+HumanA::~HumanA(void) {
+}
 
-#endif
+void    HumanA::attack(void) const {
+    std::cout << this->_name << " is about to get violent with his " <<
+        this->_weapon.getType() << std::endl;
+    return;
+}

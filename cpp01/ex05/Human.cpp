@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   const.hpp                                          :+:    :+:            */
+/*   Human.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 17:00:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 14:32:43 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/04 12:57:29 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/05 17:57:46 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_H
-# define CONST_H
+#include "Human.hpp"
 
-class test {
-public:
-    float const pi;
-    int         value;
+Human::Human(void) {
+}
 
-    test(float const f);
-    ~test(void);
-    
-    void        fn(void) const;
-    test const  *identifyptr() const;
-    // test const  &identifyref() const;
-};
+Human::~Human(void) {
+}
 
-#endif
+Brain const &Human::getBrain(void) const {
+    return this->_brain;
+}
+
+Brain const *Human::identify(void) const {
+    return  this->_brain.identify();
+}

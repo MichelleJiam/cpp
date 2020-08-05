@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 13:38:53 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/29 14:05:56 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/05 15:49:49 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,8 @@ int     main() {
     std::cout << adam.getloginrefconst() << std::endl;
     *(bill.getloginptr()) = "billybar";
     std::cout << bill.getloginrefconst() << std::endl;
+
+    student &ref = bill;
+    std::cout << "Login ref test: " << ref.getloginref() << std::endl;
     return 0;
 }

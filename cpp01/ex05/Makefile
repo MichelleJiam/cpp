@@ -5,16 +5,16 @@
 #                                                      +:+                     #
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/07/27 20:26:41 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/05 16:04:11 by mjiam         ########   odam.nl          #
+#    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
+#    Updated: 2020/08/05 16:04:06 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	forthehorde
+NAME	= 	whereMyBrainAt
 
-SRC		= 	main.cpp Zombie.cpp ZombieHorde.cpp
+SRC		= 	main.cpp Brain.cpp Human.cpp
 
-HEADER	= 	Zombie.hpp ZombieHorde.hpp
+HEADER	= 	Brain.hpp Human.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 

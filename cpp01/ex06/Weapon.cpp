@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   const.hpp                                          :+:    :+:            */
+/*   Weapon.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 17:00:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/05 14:32:43 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/05 14:40:21 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/05 17:53:52 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONST_H
-# define CONST_H
+#include "Weapon.hpp"
 
-class test {
-public:
-    float const pi;
-    int         value;
+Weapon::Weapon(std::string type) {
+    this->_type = type;
+    return;
+}
 
-    test(float const f);
-    ~test(void);
-    
-    void        fn(void) const;
-    test const  *identifyptr() const;
-    // test const  &identifyref() const;
-};
+Weapon::~Weapon(void) {
+}
 
-#endif
+std::string const   &Weapon::getType(void) const {
+    return this->_type;
+}
+
+void                Weapon::setType(std::string type) {
+    this->_type = type;
+    return;
+}

@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/30 14:26:01 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/07/30 14:34:47 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/04 12:35:54 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	memoryLeak() {
 
 	std::cout << *panther << std::endl;
 	delete panther;
+	return;
 }
 
 int		main(void) {
