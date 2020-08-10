@@ -6,19 +6,19 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/10 17:55:31 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/10 21:35:38 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	fixed
+NAME	= 	fr4g
 
-SRC		= 	main.cpp Fixed.cpp
+SRC		= 	main.cpp FragTrap.cpp
 
-HEADER	= 	Fixed.hpp
+HEADER	= 	FragTrap.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 
-CC		= 	g++
+CC		= 	clang++
 
 FLAGS	= 	-Wall -Wextra -Werror -std=c++98
 
