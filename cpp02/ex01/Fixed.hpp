@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 20:41:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/06 21:21:41 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/11 13:33:32 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FIXED_H
 
 #include <iostream>
-#include <tgmath.h>
+#include <cmath>
 
 class Fixed {
 public:

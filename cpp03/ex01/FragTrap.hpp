@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/10 21:27:30 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/12 17:24:25 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/12 17:24:16 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <cstdlib> // for Linux/Windows compilation
 
 class FragTrap {
 public:
