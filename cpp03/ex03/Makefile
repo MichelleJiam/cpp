@@ -6,15 +6,15 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/14 17:38:06 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/19 20:16:08 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	fr4g
+NAME	= 	ninj4
 
-SRC		= 	main.cpp FragTrap.cpp
+SRC		= 	main.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp
 
-HEADER	= 	FragTrap.hpp
+HEADER	= 	FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/10 21:36:24 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/12 17:13:31 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/14 17:39:01 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ FragTrap::FragTrap(FragTrap const &src) : _name(src._name + " v2.0") {
 }
 
 FragTrap::~FragTrap(void) {
-	std::cout << "Process initiated: destruction of \x1B[36m<" <<
-		this->_name	<< ">\033[0m\n" << std::endl;
+	std::cout << "Process initiated: sending \x1B[36m<" <<
+		this->_name	<< ">\033[0m to a far-away farm\n" << std::endl;
 	return;
 }
 
@@ -85,7 +85,7 @@ void		FragTrap::rangedAttack(std::string const &target) {
 void		FragTrap::meleeAttack(std::string const &target) {
 	std::cout << "FR4G-TP \x1B[36m<" << this->_name << ">\033[0m hits " <<
 		"\x1B[35m<" << target << ">\033[0m with a giant candy cane, " <<
-		"giving them a sugar high for <" << this->_ranged << "> seconds."
+		"giving them a sugar high for <" << this->_melee << "> seconds."
 		<< std::endl << target << ": \"Ugh my head\"\n" << std::endl;
 	return;
 }
@@ -104,7 +104,6 @@ void		FragTrap::vaulthunter_dot_exe(std::string const &target) {
 		case 1: return this->_cinnamonChallenge(target);
 		case 2: return this->_iceScream(target);
 		case 3:	return this->_nutBuster(target);
-		// case 4: return this->_pirateMode(target);
 		default: return this->_pirateMode(target);
 	}
 }
@@ -115,20 +114,21 @@ void		FragTrap::takeDamage(unsigned int amount) {
 		<< "Attempted attack was negated by their armour.\n" << std::endl;
 		return;
 	}
-	int under = (this->_hp + this->_armour - amount) == 0 ? this->_hp : 0;
-	this->_hp = under ? 0 : this->_hp + this->_armour - amount;
+	amount = (amount - this->_armour) >= this->_hp ?
+				this->_hp :	(amount - this->_armour);
+	this->_hp -= amount;
 	std::cout << "\x1B[36m<" << this->_name << ">\033[0m is hit with <" <<
-		(under ? under : amount - this->_armour) << "> damage. HP left: "
-		<< this->_hp << std::endl << std::endl;
+		amount << "> damage. HP left: " << this->_hp << std::endl << std::endl;
 	return;
 }
 
 void		FragTrap::beRepaired(unsigned int amount) {
-	int over = this->_hp + amount > this->_maxhp ? this->_maxhp - this->_hp : 0;
-	this->_hp = over ? this->_maxhp : this->_hp + amount;
+	amount = (this->_hp + amount) >= this->_maxhp ?
+				this->_maxhp - this->_hp : amount;
+	this->_hp += amount;
 	std::cout << "\x1B[36m<" << this->_name << ">\033[0m has been repaired and"
-		" regains <" << (over ? over : amount) << "> life. HP left: " <<
-		this->_hp << std::endl << std::endl;
+		<< " regains <" << amount << "> life. HP left: " << this->_hp
+		<< std::endl << std::endl;
 	return;
 }
 

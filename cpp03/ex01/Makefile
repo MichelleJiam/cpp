@@ -6,15 +6,15 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/12 17:21:02 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/14 17:38:02 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	scav
+NAME	= 	sc4v
 
 SRC		= 	main.cpp FragTrap.cpp ScavTrap.cpp
 
-HEADER	= 	FragTrap.hpp ScavTrap.hppp
+HEADER	= 	FragTrap.hpp ScavTrap.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 

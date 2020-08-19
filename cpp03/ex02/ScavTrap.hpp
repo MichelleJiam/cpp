@@ -6,19 +6,16 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 17:21:50 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/14 15:06:38 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/18 18:38:16 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAV_TRAP_H
 # define SCAV_TRAP_H
 
+#include "ClapTrap.hpp"
 
-#include <iostream>
-#include <ctime>
-#include <cstdlib> // for Linux/Windows compilation
-
-class ScavTrap {
+class ScavTrap : public ClapTrap {
 public:
 	ScavTrap(void);
 	ScavTrap(std::string name);
@@ -29,20 +26,8 @@ public:
 	void			rangedAttack(std::string const &target);
 	void			meleeAttack(std::string const &target);
 	void			challengeNewcomer(std::string const &target);
-	void			takeDamage(unsigned int amount);
-	void			beRepaired(unsigned int amount);
 
 private:
-	std::string		_name;
-	unsigned int	_maxenergy;
-	unsigned int	_energy;
-	unsigned int	_maxhp;
-	unsigned int	_hp;
-	unsigned int	_level;
-	unsigned int	_melee;
-	unsigned int	_ranged;
-	unsigned int	_armour;
-
 	void			_cinnamonChallenge(std::string const &target);
 	void			_babydancerChallenge(std::string const &target);
 	void			_iceChallenge(std::string const &target);

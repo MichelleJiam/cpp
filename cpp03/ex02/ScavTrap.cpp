@@ -6,45 +6,41 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 17:21:12 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/14 17:39:45 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/18 21:20:23 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) :
-	_name("uNKn0Wn"),
-	_maxenergy(50),
-	_energy(50),
-	_maxhp(100),
-	_hp(100),
-	_level(1),
-	_melee(20),
-	_ranged(15),
-	_armour(3)
-{
+ScavTrap::ScavTrap(void) : ClapTrap("uNKn0Wn") {
 	std::cout << "Process initiated: \x1B[33m<uNKn0Wn>\033[0m Scavtrap created\n"
 		<< std::endl;
+	_maxenergy = 50;
+	_energy = 50;
+	_maxhp = 100;
+	_hp = 100;
+	_level = 1;
+	_melee = 20;
+	_ranged = 15;
+	_armour = 3;
 	return;
 }
 
-ScavTrap::ScavTrap(std::string name) :
-	_name(name),
-	_maxenergy(50),
-	_energy(50),
-	_maxhp(100),
-	_hp(100),
-	_level(1),
-	_melee(20),
-	_ranged(15),
-	_armour(3)
-{
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "Process initiated: new Scavtrap \x1B[33m<" << name <<
 		">\033[0m created\n" << std::endl;
+	_maxenergy = 50;
+	_energy = 50;
+	_maxhp = 100;
+	_hp = 100;
+	_level = 1;
+	_melee = 20;
+	_ranged = 15;
+	_armour = 3;
 	return;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src) : _name(src._name + " v2.0") {
+ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src._name + " v2.0") {
 	std::cout << "Process initiated: duplication of \x1B[33m<" <<
 		src._name << ">\033[0m. \x1B[33m<" << this->_name <<
 		">\033[0m created" << std::endl;
@@ -99,30 +95,6 @@ void		ScavTrap::challengeNewcomer(std::string const &target) {
 		case 3:	return this->_mysterymeatChallenge(target);
 		default: return this->_pirateMode(target);
 	}
-}
-
-void		ScavTrap::takeDamage(unsigned int amount) {
-	if (amount < this->_armour) {
-		std::cout << "\x1B[33m<" << this->_name << ">\033[0m wobbles a little. "
-		<< "Attempted attack was negated by their armour.\n" << std::endl;
-		return;
-	}
-	amount = (amount - this->_armour) >= this->_hp ?
-				this->_hp :	(amount - this->_armour);
-	this->_hp -= amount;
-	std::cout << "\x1B[33m<" << this->_name << ">\033[0m is hit with <" <<
-		amount << "> damage. HP left: " << this->_hp << std::endl << std::endl;
-	return;
-}
-
-void		ScavTrap::beRepaired(unsigned int amount) {
-	amount = (this->_hp + amount) >= this->_maxhp ?
-				this->_maxhp - this->_hp : amount;
-	this->_hp += amount;
-	std::cout << "\x1B[33m<" << this->_name << ">\033[0m has been repaired and"
-		<< " regains <" << amount << "> life. HP left: " << this->_hp
-		<< std::endl << std::endl;
-	return;
 }
 
 void		ScavTrap::_cinnamonChallenge(std::string const &target) {
