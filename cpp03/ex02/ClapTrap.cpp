@@ -15,12 +15,18 @@
 ClapTrap::ClapTrap(void) : _name("uNKn0Wn") {
 	std::cout << "Process initiated: \x1B[32m<uNKn0Wn>\033[0m Claptrap created\n"
 		<< std::endl;
+	_maxhp = 100;
+	_hp = 100;
+	_level = 1;
 	return;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name) {
 	std::cout << "Process initiated: new Claptrap \x1B[32m<" << name <<
 		">\033[0m created\n" << std::endl;
+	_maxhp = 100;
+	_hp = 100;
+	_level = 1;
 	return;
 }
 

@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/10 21:36:24 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/19 19:25:30 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/20 20:57:55 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ FragTrap::FragTrap(void) : ClapTrap("uNKn0Wn") {
 		<< std::endl << std::endl;
 	_maxenergy = 100;
 	_energy = 100;
-	_maxhp = 100;
-	_hp = 100;
-	_level = 1;
 	_melee = 30;
 	_ranged = 20;
 	_armour = 5;
@@ -31,9 +28,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 		">\033[0m created" << std::endl << std::endl;
 	_maxenergy = 100;
 	_energy = 100;
-	_maxhp = 100;
-	_hp = 100;
-	_level = 1;
 	_melee = 30;
 	_ranged = 20;
 	_armour = 5;

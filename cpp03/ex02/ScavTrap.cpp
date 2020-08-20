@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/12 17:21:12 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/18 21:20:23 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/20 20:55:25 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ ScavTrap::ScavTrap(void) : ClapTrap("uNKn0Wn") {
 		<< std::endl;
 	_maxenergy = 50;
 	_energy = 50;
-	_maxhp = 100;
-	_hp = 100;
-	_level = 1;
 	_melee = 20;
 	_ranged = 15;
 	_armour = 3;
@@ -31,9 +28,6 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 		">\033[0m created\n" << std::endl;
 	_maxenergy = 50;
 	_energy = 50;
-	_maxhp = 100;
-	_hp = 100;
-	_level = 1;
 	_melee = 20;
 	_ranged = 15;
 	_armour = 3;
