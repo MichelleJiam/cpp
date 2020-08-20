@@ -19,7 +19,6 @@ NinjaTrap::NinjaTrap(void) : ClapTrap("uNKn0Wn") {
 	_energy = 120;
 	_maxhp = 60;
 	_hp = 60;
-	_level = 1;
 	_melee = 60;
 	_ranged = 5;
 	_armour = 0;
@@ -33,7 +32,6 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name) {
 	_energy = 120;
 	_maxhp = 60;
 	_hp = 60;
-	_level = 1;
 	_melee = 60;
 	_ranged = 5;
 	_armour = 0;

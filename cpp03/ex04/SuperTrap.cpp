@@ -22,7 +22,6 @@ SuperTrap::SuperTrap(void)
 	_energy = NinjaTrap::_energy;
 	_maxhp = FragTrap::_maxhp;
 	_hp = FragTrap::_hp;
-	_level = 1;
 	_melee = NinjaTrap::_melee;
 	_ranged = FragTrap::_ranged;
 	_armour = FragTrap::_armour;
@@ -37,16 +36,15 @@ SuperTrap::SuperTrap(std::string name)
 		">\033[0m created" << std::endl << std::endl;
 	_maxenergy = NinjaTrap::_maxenergy;
 	_energy = NinjaTrap::_energy;
-	_maxhp = FragTrap::_maxhp;
-	_hp = FragTrap::_hp;
-	std::cout << "Frag hp: " << FragTrap::_hp << std::endl;
-	std::cout << "Hp assigned is: " << _hp << std::endl;
-	_level = 1;
+	_maxhp = 100;
+	_hp = 100;
 	_melee = NinjaTrap::_melee;
-	_ranged = FragTrap::_ranged;
-	_armour = FragTrap::_armour;
+	_ranged = 20;
+	_armour = 5;
 	return;
 }
+// manually setting Frag-derived values is necessary because initialisation
+// order overwrites FragTrap values with NinjaTrap values.
 
 SuperTrap::SuperTrap(SuperTrap const &src)
 	: 	ClapTrap(src._name + " v2.0"),

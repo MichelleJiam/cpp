@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/20 17:52:06 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/20 22:06:23 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ HEADER	= 	FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp SuperTrap.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 
-CC		= 	g++
+CC		= 	clang++
 
 FLAGS	= 	-Wall -Wextra -Werror -std=c++98
 
