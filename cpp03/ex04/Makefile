@@ -6,19 +6,20 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/20 17:56:10 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/20 17:52:06 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	ninj4
+NAME	= 	sup3r
 
-SRC		= 	main.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp
+SRC		= 	main.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp NinjaTrap.cpp \
+			SuperTrap.cpp
 
-HEADER	= 	FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp
+HEADER	= 	FragTrap.hpp ScavTrap.hpp ClapTrap.hpp NinjaTrap.hpp SuperTrap.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 
-CC		= 	clang++
+CC		= 	g++
 
 FLAGS	= 	-Wall -Wextra -Werror -std=c++98
 
