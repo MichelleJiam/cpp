@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 21:02:15 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/11 14:33:38 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/21 17:24:32 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed(void) : _n(0) {
 
 Fixed::Fixed(int const n) {
     std::cout << "Int constructor called" << std::endl;
-    this->_n = n * (1 << this->_bits);
+    this->_n = n * (1 << this->_bits); // 1 << bits == 2^bits
     return;
 }
 
