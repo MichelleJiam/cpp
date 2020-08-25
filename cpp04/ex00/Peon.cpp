@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 17:12:41 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/24 21:06:50 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/25 17:38:07 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ Peon::Peon(std::string name) : Victim(name) {
 }
 
 Peon::Peon(Peon const &src) : Victim(src._name) {
-    std::cout << "I didn't know I had a twin..." << std::endl;
+    std::cout << "I didn't know I had a twin... ";
     *this = src;
+    this->_name = src._name + " II";
+    std::cout << "\x1B[34m" << this->_name << "\033[0m spawns out of thin air!"
+        << std::endl;
     return;
 }
 
@@ -33,11 +36,12 @@ Peon          &Peon::operator=(Peon const &rhs) {
 }
 
 std::ostream    &operator<<(std::ostream &o, Peon const &rhs) {
-    o << "I'm " << rhs.getName() << " and I like otters!" << std::endl;
+    o << "I'm \x1B[34m" << rhs.getName() << "\033[0m and I like otters!"
+        << std::endl;
     return o;
 }
 
 void            Peon::getPolymorphed(void) const {
-    std::cout << this->_name << " has been turned into a pink pony!"
-        << std::endl;
+    std::cout << "\x1B[34m" << this->_name << "\033[0m has been turned " <<
+        "into a pink pony!" << std::endl;
 }

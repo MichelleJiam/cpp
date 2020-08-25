@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/21 17:54:23 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/21 18:28:00 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/25 13:43:18 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,27 @@
 
 class Character {
 public:
-    Character(/* args */) {};
-    ~Character() {};
+    Character(/* args */) {
+        std::cout << "Entering character creation screen\n";
+    };
+    ~Character() {
+        std::cout << "Character destroyed\n";
+    };
 
+    // void    sayHello(std::string const &target);
     virtual void    sayHello(std::string const &target);
 };
 
 class Warrior : public Character {
 public:
-    Warrior(/* args */) {};
-    ~Warrior() {};
+    Warrior(/* args */) {
+        std::cout << "You have chosen Warrior class\n";
+    };
+    ~Warrior() {
+        std::cout << "Warrior slain\n";
+    };
 
+    // void    sayHello(std::string const &target);
     virtual void    sayHello(std::string const &target);
         // a virtual member function is called a method,
         // whose resolution is dynamic and is determined at run time
@@ -53,6 +63,12 @@ int main() {
     // Character    *d = new Cat(); // also not ok because Cat is not a Char.
 
     a->sayHello("person"); // this outputs the Warrior's version of hello
-    b->sayHello("person"); // this outputs the Char.'s version
+    b->sayHello("person");
+        // without virtual: this outputs the Char.'s version
+        // with virtual: outputs Warrior's version
+    std::cout << "Now deleting b:\n";
+    delete b;
+    std::cout << "Now deleting a:\n";
+    delete a;
     return 0;
 }

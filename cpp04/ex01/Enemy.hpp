@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   Enemy.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/24 17:11:55 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 16:08:33 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/25 16:16:14 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/25 20:45:45 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_H
-#define PEON_H
+#ifndef ENEMY_H
+#define ENEMY_H
 
 #include <iostream>
-#include "Victim.hpp"
 
-class Peon : public Victim {
+class Enemy {
 public:
-    Peon(std::string name);
-    Peon(Peon const &src);
-    Peon &operator=(Peon const &rhs);
-    ~Peon(void);
+    Enemy(int hp, std::string const &type);
+    Enemy(Enemy const &src);
+    Enemy &operator=(Enemy const &rhs);
+    virtual ~Enemy(void);
 
-    void    getPolymorphed(void) const;
+    std::string     getType(void) const;
+    int             getHP(void) const;
+    virtual void    takeDamage(int damage);
 
 private:
-    Peon(void);
+    Enemy(void);
+
+protected:
+    std::string     _type;
+    int             _hp;
 };
 
 #endif

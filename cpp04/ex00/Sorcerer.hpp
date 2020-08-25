@@ -6,12 +6,12 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 17:11:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/24 20:57:46 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/25 17:10:43 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SORCERER_H
-# define SORCERER_H
+#define SORCERER_H
 
 #include <iostream>
 #include "Victim.hpp"

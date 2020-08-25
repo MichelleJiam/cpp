@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 17:12:19 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/24 21:08:15 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/25 17:37:47 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 Sorcerer::Sorcerer(std::string name, std::string title)
     : _name(name), _title(title) {
-    std::cout << this->_name << ", " << this->_title << ", is born!" << std::endl;
+    std::cout << "\x1B[31m" << this->_name << "\033[0m, " << this->_title <<
+        ", is born!" << std::endl;
     return;
 }
 
@@ -22,12 +23,15 @@ Sorcerer::Sorcerer(Sorcerer const &src) {
     std::cout << "Imitation is the sincerest form of flattery that " <<
         "mediocrity can pay to greatness." << std::endl;
     *this = src;
+    this->_name = src._name + " II";
+    std::cout << "\x1B[31m" << this->_name << "\033[0m has been born."
+        << std::endl;
     return;
 }
 
 Sorcerer::~Sorcerer(void) {
-    std::cout << this->_name << ", " << this->_title << ", is dead. " <<
-        "Consequences will never be the same!" << std::endl;
+    std::cout << "\x1B[31m" << this->_name << "\033[0m, " << this->_title <<
+        ", is dead. " << "Consequences will never be the same!" << std::endl;
     return;
 }
 
@@ -39,7 +43,7 @@ Sorcerer        &Sorcerer::operator=(Sorcerer const &rhs) {
 }
 
 std::ostream    &operator<<(std::ostream &o, Sorcerer const &rhs) {
-    o << "I am " << rhs.getName() << ", " << rhs.getTitle() <<
+    o << "I am \x1B[31m" << rhs.getName() << "\033[0m, " << rhs.getTitle() <<
         ", and I like ponies!" << std::endl;
     return o;
 }

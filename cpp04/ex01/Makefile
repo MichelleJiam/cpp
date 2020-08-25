@@ -6,15 +6,17 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/25 16:08:26 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/25 20:42:47 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	sheeple
+NAME	= 	nukacola
 
-SRC		= 	main.cpp Peon.cpp Sorcerer.cpp Victim.cpp
+SRC		= 	main.cpp AWeapon.cpp Character.cpp Enemy.cpp PlasmaRifle.cpp \
+			PowerFist.cpp RadScorpion.cpp SuperMutant.cpp
 
-HEADER	= 	Peon.hpp Sorcerer.hpp Victim.hpp
+HEADER	= 	AWeapon.hpp Character.hpp Enemy.hpp PlasmaRifle.hpp \
+			PowerFist.hpp RadScorpion.hpp SuperMutant.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 

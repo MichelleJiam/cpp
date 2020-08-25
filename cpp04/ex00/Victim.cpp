@@ -6,27 +6,30 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 17:12:31 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/24 20:55:38 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/25 17:38:31 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
 
 Victim::Victim(std::string name) : _name(name) {
-    std::cout << "Some random victim called " << this->_name <<
-        " just appeared!" << std::endl;
+    std::cout << "Some random victim called \x1B[36m" << this->_name <<
+        "\033[0m just appeared!" << std::endl;
     return;
 }
 
 Victim::Victim(Victim const &src) {
-    std::cout << "I didn't know I had a twin..." << std::endl;
+    std::cout << "I didn't know I had a twin... ";
     *this = src;
+    this->_name = src._name + " II";
+    std::cout << "\x1B[36m" << this->_name << "\033[0m spawns out of thin air!"
+        << std::endl;
     return;
 }
 
 Victim::~Victim(void) {
-    std::cout << "Victim " << this->_name <<
-        " just died for no apparent reason!" << std::endl;
+    std::cout << "Victim \x1B[36m" << this->_name <<
+        "\033[0m just died for no apparent reason!" << std::endl;
     return;
 }
 
@@ -37,7 +40,8 @@ Victim          &Victim::operator=(Victim const &rhs) {
 }
 
 std::ostream    &operator<<(std::ostream &o, Victim const &rhs) {
-    o << "I'm " << rhs.getName() << " and I like otters!" << std::endl;
+    o << "I'm \x1B[36m" << rhs.getName() << "\033[0m and I like otters!"
+        << std::endl;
     return o;
 }
 
@@ -46,6 +50,6 @@ std::string     Victim::getName(void) const {
 }
 
 void            Victim::getPolymorphed(void) const {
-    std::cout << this->_name << " has been turned into a cute little sheep!"
-        << std::endl;
+    std::cout << "\x1B[36m" << this->_name << "\033[0m has been turned into "
+        << "a cute little sheep!" << std::endl;
 }

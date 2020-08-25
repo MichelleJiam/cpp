@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   PlasmaRifle.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/24 17:11:55 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 16:08:33 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/25 16:16:54 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/25 17:30:21 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_H
-#define PEON_H
+#ifndef PLASMA_RIFLE_H
+#define PLASMA_RIFLE_H
 
-#include <iostream>
-#include "Victim.hpp"
+#include "AWeapon.hpp"
 
-class Peon : public Victim {
+class PlasmaRifle : public AWeapon {
 public:
-    Peon(std::string name);
-    Peon(Peon const &src);
-    Peon &operator=(Peon const &rhs);
-    ~Peon(void);
+    PlasmaRifle(void);
+    PlasmaRifle(PlasmaRifle const &src);
+    PlasmaRifle &operator=(PlasmaRifle const &rhs);
+    ~PlasmaRifle(void);
 
-    void    getPolymorphed(void) const;
-
-private:
-    Peon(void);
+    void    attack(void) const;
 };
 
 #endif

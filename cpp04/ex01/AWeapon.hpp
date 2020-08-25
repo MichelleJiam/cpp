@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Victim.hpp                                         :+:    :+:            */
+/*   AWeapon.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/24 17:11:34 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 15:01:53 by mjiam         ########   odam.nl         */
+/*   Created: 2020/08/25 16:17:12 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/08/25 17:11:23 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_H
-#define VICTIM_H
+#ifndef AWEAPON_H
+#define AWEAPON_H
 
 #include <iostream>
 
-class Victim {
+class AWeapon {
 public:
-    Victim(std::string name);
-    Victim(Victim const &src);
-    Victim &operator=(Victim const &rhs);
-    virtual ~Victim(void);
+    AWeapon(std::string const &name, int apcost, int damage);
+    AWeapon(AWeapon const &src);
+    AWeapon &operator=(AWeapon const &rhs);
+    virtual ~AWeapon(void);
 
     std::string     getName(void) const;
-    virtual void    getPolymorphed(void) const;
+    int             getAPCost(void) const;
+    int             getDamage(void) const;
+    virtual void    attack(void) const = 0;
 
 private:
-    Victim(void);
+    AWeapon(void);
 
 protected:
     std::string     _name;
+    int             _apcost;
+    int             _damage;
 };
-
-std::ostream    &operator<<(std::ostream &o, Victim const &rhs);
 
 #endif
