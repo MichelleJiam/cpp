@@ -6,16 +6,17 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/27 17:31:33 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/27 17:36:39 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	warham
+NAME	= 	fantasy
 
-SRC		= 	main.cpp AssaultTerminator.cpp TacticalMarine.cpp Squad.cpp
+SRC		= 	main.cpp AMateria.cpp Character.cpp Cure.cpp \
+			Ice.cpp MateriaSource.cpp
 
-HEADER	= 	AssaultTerminator.hpp ISpaceMarine.hpp ISquad.hpp \
-			TacticalMarine.hpp Squad.hpp
+HEADER	= 	AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp \
+			IMateriaSource.hpp MateriaSource.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 

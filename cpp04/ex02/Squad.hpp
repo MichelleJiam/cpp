@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:12:08 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/26 20:41:37 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/27 17:18:03 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ private:
     ISpaceMarine    **_units;
 
     void            _clear(ISpaceMarine **array);
-    void            _copy(Squad const &src, ISpaceMarine **array, int size);
+    ISpaceMarine    **_copy(Squad const &src);
 };
 
 #endif
