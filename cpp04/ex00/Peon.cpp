@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 17:12:41 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 17:38:07 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 18:08:22 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Peon::Peon(Peon const &src) : Victim(src._name) {
 
 Peon::~Peon(void) {
     std::cout << "Bleuark..." << std::endl;
+    return;
 }
 
 Peon          &Peon::operator=(Peon const &rhs) {
@@ -44,4 +45,5 @@ std::ostream    &operator<<(std::ostream &o, Peon const &rhs) {
 void            Peon::getPolymorphed(void) const {
     std::cout << "\x1B[34m" << this->_name << "\033[0m has been turned " <<
         "into a pink pony!" << std::endl;
+    return;
 }

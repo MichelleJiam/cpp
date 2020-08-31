@@ -6,15 +6,13 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:26:25 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/27 17:29:19 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 14:36:27 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad(void) {
-    this->_count = 0;
-    this->_units = NULL;
+Squad::Squad(void) : _count(0), _units(NULL) {
 }
 
 Squad::Squad(Squad const &src) {

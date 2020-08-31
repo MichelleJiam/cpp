@@ -6,16 +6,18 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 17:01:56 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 20:37:47 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 18:10:55 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string const &name) {
-    this->_name = name;
-    this->_ap = 40;
-    this->_weapon = NULL;
+Character::Character(void) {
+    return;
+}
+
+Character::Character(std::string const &name)
+    : _name(name), _ap(40), _weapon(NULL) {
     return;
 }
 
@@ -30,14 +32,16 @@ Character::~Character(void) {
 }
 
 Character       &Character::operator=(Character const &rhs) {
-    this->_name = rhs._name;
-    this->_ap = rhs._ap;
-    this->_weapon = rhs._weapon;
+    if (this != &rhs) {
+        this->_name = rhs._name;
+        this->_ap = rhs._ap;
+        this->_weapon = rhs._weapon;
+    }
     return *this;
 }
 
 std::ostream    &operator<<(std::ostream &o, Character const &rhs) {
-    o << rhs.getName() << " has " << rhs.getAP() << " and " << rhs.getWeapon()
+    o << rhs.getName() << " has " << rhs.getAP() << " AP and " << rhs.getWeapon()
         << std::endl;
     return o;
 }

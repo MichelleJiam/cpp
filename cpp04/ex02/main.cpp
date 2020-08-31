@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 15:04:03 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/27 17:27:45 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 18:18:24 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(void) {
         cur->rangedAttack();
         cur->meleeAttack();
     }
-    std::cout << "--- Reinforcements have arrived ---" << std::endl;
+    std::cout << "\n--- Reinforcements have arrived ---" << std::endl;
     Squad           vlc2;
     Squad           vlc3;
     ISpaceMarine    *tom = new AssaultTerminator;

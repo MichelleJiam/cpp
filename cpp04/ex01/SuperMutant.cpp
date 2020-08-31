@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 17:01:23 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 18:14:44 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 14:55:45 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ SuperMutant::~SuperMutant(void) {
     return;
 }
 SuperMutant &SuperMutant::operator=(SuperMutant const &rhs) {
-    this->_hp = rhs._hp;
-    this->_type = rhs._type;
+    if (this != &rhs) {
+        this->_hp = rhs._hp;
+        this->_type = rhs._type;
+    }
     return *this;
 }
 

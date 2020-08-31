@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 17:00:36 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 17:44:00 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 14:55:22 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ PowerFist::~PowerFist(void) {
 }
 
 PowerFist &PowerFist::operator=(PowerFist const &rhs) {
-    this->_name = rhs._name;
-    this->_apcost = rhs._apcost;
-    this->_damage = rhs._damage;
+    if (this != &rhs) {
+        this->_name = rhs._name;
+        this->_apcost = rhs._apcost;
+        this->_damage = rhs._damage;
+    }
     return *this;
 }
 

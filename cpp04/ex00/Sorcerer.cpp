@@ -6,11 +6,15 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 17:12:19 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 17:37:47 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 15:43:55 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
+
+Sorcerer::Sorcerer(void) {
+    return;
+}
 
 Sorcerer::Sorcerer(std::string name, std::string title)
     : _name(name), _title(title) {

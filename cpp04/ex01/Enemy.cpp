@@ -6,15 +6,18 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 17:01:05 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 18:05:37 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 18:09:41 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
 
-Enemy::Enemy(int hp, std::string const &type) {
-    this->_hp = hp;
-    this->_type = type;
+Enemy::Enemy(void) {
+    return;
+}
+
+Enemy::Enemy(int hp, std::string const &type)
+    : _type(type), _hp(hp) {
     return;
 }
 
@@ -28,8 +31,10 @@ Enemy::~Enemy(void) {
 }
 
 Enemy       &Enemy::operator=(Enemy const &rhs) {
-    this->_hp = rhs._hp;
-    this->_type = rhs._type;
+    if (this != &rhs) {
+        this->_hp = rhs._hp;
+        this->_type = rhs._type;
+    }
     return *this;
 }
 

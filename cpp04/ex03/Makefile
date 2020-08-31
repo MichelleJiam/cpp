@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/08/27 17:36:39 by mjiam         ########   odam.nl          #
+#    Updated: 2020/08/31 17:53:17 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,10 @@ CC		= 	clang++
 
 FLAGS	= 	-Wall -Wextra -Werror -std=c++98
 
+ifdef DEBUG
+FLAGS	+=	-fsanitize=address -fno-omit-frame-pointer
+endif
+
 # COLORS
 CYAN	= 	\033[0;36m
 PURPLE	= 	\033[0;35m
@@ -37,11 +41,16 @@ $(NAME): $(OBJ) $(HEADER)
 	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 	@echo "Executable $(CYAN)$(NAME)$(RESET) made"
 
-run: $(NAME)
+run:
+	@$(MAKE)
 	@./$(NAME)
 
 %.o: %.cpp
 	@$(CC) $(FLAGS) -c $< -o $@
+
+debug: $(OBJ) $(HEADER)
+	@echo "$(BLUE)Debug mode: compiling with address sanitizer$(RESET)"
+	@$(MAKE) DEBUG=1
 
 clean:
 	@echo "$(BLUE)Cleaning$(RESET)"

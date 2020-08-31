@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 20:12:38 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 20:39:53 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 18:10:13 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(void) {
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
-    std::cout << "\nNew challenger and enemy emerge!" << std::endl;
+    std::cout << "\n--- New challenger and enemy emerge! ---" << std::endl;
 
     Enemy       *c = new SuperMutant();
     Character   newb("newbie");

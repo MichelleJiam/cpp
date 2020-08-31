@@ -6,11 +6,15 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 17:12:31 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 17:38:31 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 15:44:06 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
+
+Victim::Victim(void) {
+    return;
+}
 
 Victim::Victim(std::string name) : _name(name) {
     std::cout << "Some random victim called \x1B[36m" << this->_name <<
@@ -52,4 +56,5 @@ std::string     Victim::getName(void) const {
 void            Victim::getPolymorphed(void) const {
     std::cout << "\x1B[36m" << this->_name << "\033[0m has been turned into "
         << "a cute little sheep!" << std::endl;
+    return;
 }

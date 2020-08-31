@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 17:00:13 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/25 17:42:41 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 14:55:03 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ PlasmaRifle::~PlasmaRifle(void) {
 }
 
 PlasmaRifle &PlasmaRifle::operator=(PlasmaRifle const &rhs) {
-    this->_name = rhs._name;
-    this->_apcost = rhs._apcost;
-    this->_damage = rhs._damage;
+    if (this != &rhs) {
+        this->_name = rhs._name;
+        this->_apcost = rhs._apcost;
+        this->_damage = rhs._damage;
+    }
     return *this;
 }
 

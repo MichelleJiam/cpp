@@ -6,19 +6,22 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 18:02:32 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/27 18:15:15 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 17:43:50 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const &type) {
+AMateria::AMateria(void) {
+    return;
+}
+
+AMateria::AMateria(std::string const &type) : _xp(0), _type(type){
     return;
 }
 
 AMateria::AMateria(AMateria const &src) {
-    this->_type = src._type;
-    this->_xp = src._xp;
+    *this = src;
     return;
 }
 
@@ -53,6 +56,8 @@ void                AMateria::setXP(unsigned int n) {
 }
 
 void                AMateria::use(ICharacter &target) {
+    (void)target;
     this->setXP(this->_xp + 10);
+    std::cout << "Skill XP gained. Current skill level: " << this->_xp << std::endl;
     return;
 }

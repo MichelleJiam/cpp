@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 17:40:15 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/27 18:16:37 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/08/31 17:42:08 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ public:
     AMateria &operator=(AMateria const &rhs);
     virtual ~AMateria(void);
 
-    std::string const   &getType(void) const; // returns materia type
-    unsigned int        getXP(void) const; // returns materia's xp
+    std::string const   &getType(void) const;
+    unsigned int        getXP(void) const;
     void                setType(std::string const &type);
     void                setXP(unsigned int n);
 
