@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 20:12:38 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/31 18:10:13 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/01 16:40:11 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,12 @@ int main(void) {
     newb.attack(c);
     newb.attack(c);
     std::cout << "Mission completed" << std::endl;
+    if (c->getHP() > 0)
+        delete c;
+    if (b->getHP() > 0)
+        delete b;
+    delete pf;
+    delete pr;
+    delete me;
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 17:01:56 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/31 18:10:55 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/01 16:39:43 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,9 @@ void            Character::attack(Enemy *enemy) {
         " with a " << this->_weapon->getName() << std::endl;
     this->_weapon->attack();
     enemy->takeDamage(this->_weapon->getDamage());
-    if (enemy->getHP() <= 0)
+    if (enemy->getHP() <= 0) {
         delete enemy;
+        enemy = NULL;
+    }
     return;
 }
