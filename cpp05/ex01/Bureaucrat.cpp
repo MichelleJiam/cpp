@@ -6,24 +6,24 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 18:51:23 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/01 18:41:18 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/02 18:44:28 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) {
     return;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
+Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name) {
     gradeTry(grade);
     return;
 }
-// try can also be done with function-try-block
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name) {
-    gradeTry(src._grade);
+Bureaucrat::Bureaucrat(Bureaucrat const &other) : _name(other._name) {
+    gradeTry(other._grade);
     return;
 }
 
@@ -31,15 +31,15 @@ Bureaucrat::~Bureaucrat(void) {
     return;
 }
 
-Bureaucrat          &Bureaucrat::operator=(Bureaucrat const &rhs) {
-    if (this != &rhs)
-        gradeTry(rhs._grade);
+Bureaucrat          &Bureaucrat::operator=(Bureaucrat const &other) {
+    if (this != &other)
+        gradeTry(other._grade);
     return *this;
 }
 
-std::ostream        &operator<<(std::ostream &o, Bureaucrat const &rhs) {
-    o << "<" << rhs.getName() << ">, bureaucrat grade <" << rhs.getGrade() <<
-        ">" << std::endl;
+std::ostream        &operator<<(std::ostream &o, Bureaucrat const &obj) {
+    o << "<" << obj.getName() << ">, bureaucrat grade <" << obj.getGrade()
+        << ">" << std::endl;
     return o;
 }
 
@@ -74,6 +74,19 @@ void                Bureaucrat::gradeTry(int grade) {
     }
     catch (GradeTooLowException &e) {
         std::cout << e.what() << std::endl;
+    }
+    return;
+}
+
+void                Bureaucrat::signForm(Form &form) {
+    try {
+        form.beSigned(*this);
+        std::cout << "<" << this->_name << "> signs <" << form.getName()
+            << ">" << std::endl;
+    }
+    catch (Form::GradeTooLowException &e) {
+        std::cout << "<" << this->_name << "> cannot sign <" << form.getName()
+            << "> because: " << e.what() << std::endl;
     }
     return;
 }

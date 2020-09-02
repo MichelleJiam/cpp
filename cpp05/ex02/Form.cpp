@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 18:44:07 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/02 18:37:51 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/02 19:18:01 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,14 @@ void                Form::beSigned(Bureaucrat const &bureaucrat) {
     return;
 }
 
+void                Form::checkForm(Bureaucrat const &executor) const {
+    if (this->_signed == false)
+        throw FormNotSignedException();
+    else if (this->_execGrade < executor.getGrade())
+        throw GradeTooLowException();
+    return;
+}
+
 void                Form::gradeTry(int execgrade, int signgrade) {
     try {
         if (signgrade < 1 || execgrade < 1)
@@ -103,4 +111,8 @@ char const          *Form::GradeTooHighException::what(void) const throw() {
 
 char const          *Form::GradeTooLowException::what(void) const throw() {
     return ("Grade is too low");
+}
+
+char const          *Form::FormNotSignedException::what(void) const throw() {
+    return ("Form has not been signed");
 }

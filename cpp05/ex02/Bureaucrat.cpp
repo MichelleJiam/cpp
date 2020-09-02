@@ -6,11 +6,12 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 18:51:23 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/02 17:29:17 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/02 19:13:45 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) {
     return;
@@ -20,7 +21,6 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name) {
     gradeTry(grade);
     return;
 }
-// try can also be done with function-try-block
 
 Bureaucrat::Bureaucrat(Bureaucrat const &other) : _name(other._name) {
     gradeTry(other._grade);
@@ -38,8 +38,8 @@ Bureaucrat          &Bureaucrat::operator=(Bureaucrat const &other) {
 }
 
 std::ostream        &operator<<(std::ostream &o, Bureaucrat const &obj) {
-    o << "<" << obj.getName() << ">, bureaucrat grade <" << obj.getGrade() <<
-        ">" << std::endl;
+    o << "<" << obj.getName() << ">, bureaucrat grade <" << obj.getGrade()
+        << ">" << std::endl;
     return o;
 }
 
@@ -74,6 +74,36 @@ void                Bureaucrat::gradeTry(int grade) {
     }
     catch (GradeTooLowException &e) {
         std::cout << e.what() << std::endl;
+    }
+    return;
+}
+
+void                Bureaucrat::signForm(Form &form) {
+    try {
+        form.beSigned(*this);
+        std::cout << "<" << this->_name << "> signs <" << form.getName()
+            << ">" << std::endl;
+    }
+    catch (Form::GradeTooLowException &e) {
+        std::cout << "<" << this->_name << "> cannot sign <" << form.getName()
+            << "> because: " << e.what() << std::endl;
+    }
+    return;
+}
+
+void                Bureaucrat::executeForm(Form const &form) {
+    try {
+        form.execute(*this);
+        std::cout << "<" << this->_name << "> executes <" << form.getName()
+            << ">" << std::endl;
+    }
+    catch (Form::GradeTooLowException &e) {
+        std::cout << "<" << this->_name << "> cannot execute <" << form.getName()
+            << "> because: " << e.what() << std::endl;
+    }
+    catch (Form::FormNotSignedException &e) {
+        std::cout << "<" << this->_name << "> cannot execute <" << form.getName()
+            << "> because: " << e.what() << std::endl;
     }
     return;
 }
