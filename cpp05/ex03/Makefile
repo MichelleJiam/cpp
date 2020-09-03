@@ -6,17 +6,17 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/04 12:57:16 by mjiam         #+#    #+#                  #
-#    Updated: 2020/09/03 16:07:36 by mjiam         ########   odam.nl          #
+#    Updated: 2020/09/03 19:26:39 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	moreforms
+NAME	= 	form_monkey
 
 SRC		= 	main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
-			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 HEADER	= 	Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
-			RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+			RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 
