@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 17:24:36 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/03 17:51:56 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/03 19:56:09 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdexcept>
 
 void    function(int n) {
-    std::cout << "Function activated\n";
+    std::cout << "Function beginning\n";
     if (!n)
         throw std::out_of_range("Error: n is 0");
-    std::cout << "End of function\n";
+    std::cout << "This won't print if exception is thrown\n";
 }
 
 int main(void) {
@@ -27,6 +27,6 @@ int main(void) {
     catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
-    std::cout << "End of program\n";
+    std::cout << "This will always print\n";
     return 0;
 }
