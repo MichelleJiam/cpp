@@ -6,13 +6,13 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/07 16:51:59 by mjiam         #+#    #+#                  #
-#    Updated: 2020/09/07 17:48:47 by mjiam         ########   odam.nl          #
+#    Updated: 2020/09/09 14:27:45 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= 	convert
 
-SRC		= 	main.cpp
+SRC		= 	main.cpp Convert.cpp
 
 HEADER	= 	Convert.hpp
 
