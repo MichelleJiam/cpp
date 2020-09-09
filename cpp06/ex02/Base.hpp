@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   deserialize.cpp                                    :+:    :+:            */
+/*   Base.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/09 17:29:12 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/09 19:28:21 by mjiam         ########   odam.nl         */
+/*   Created: 2020/09/09 19:10:55 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/09/09 19:14:56 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "serialize.hpp"
+#ifndef BASE_H
+#define BASE_H
 
-Data    *deserialize(void *raw) {
-    Data    *cleanData = new Data();
-    Data    *rawData = reinterpret_cast<Data*>(raw);
+class   Base {
+public:
+    virtual ~Base(void);
+};
 
-    cleanData->s1 = rawData->s1;
-    cleanData->n = rawData->n;
-    cleanData->s2 = rawData->s2;
-    return cleanData;
-}
+#endif

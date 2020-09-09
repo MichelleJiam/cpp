@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   deserialize.cpp                                    :+:    :+:            */
+/*   identify.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/09 17:29:12 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/09 19:28:21 by mjiam         ########   odam.nl         */
+/*   Created: 2020/09/09 19:10:21 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/09/09 20:02:44 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "serialize.hpp"
+#ifndef IDENTIFY_H
+#define IDENTIFY_H
 
-Data    *deserialize(void *raw) {
-    Data    *cleanData = new Data();
-    Data    *rawData = reinterpret_cast<Data*>(raw);
+#include <ctime> // srand
+#include <cstdlib> // srand on Linux
+#include <exception> // exceptions
+#include <iostream> // cout
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-    cleanData->s1 = rawData->s1;
-    cleanData->n = rawData->n;
-    cleanData->s2 = rawData->s2;
-    return cleanData;
-}
+Base    *generate(void);
+void    identify_from_pointer(Base *p);
+void    identify_from_reference(Base &p);
+
+#endif

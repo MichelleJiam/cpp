@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 17:29:20 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/09 18:47:41 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/09 19:28:27 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void    *serialize(void) {
     data->n = rand();
     std::cout << "Data generated:\n" << data->s1 << std::endl
         << data->n << std::endl << data->s2 << std::endl;
-    return reinterpret_cast<void *>(data);
+    return reinterpret_cast<void*>(data);
 }
