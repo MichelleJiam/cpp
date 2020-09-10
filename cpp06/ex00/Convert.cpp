@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 17:50:15 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/09 16:53:04 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/10 14:45:05 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void    Convert::convertData(std::string &input) {
 }
 
 void    Convert::printData(void) const {
-    std::cout << "char: ";
+    std::cout << "char: '";
     if (this->_exceptions[kChar].empty())
-        std::cout << this->_char << std::endl;
+        std::cout << this->_char << "'" << std::endl;
     else
         std::cout << this->_exceptions[kChar] << std::endl;
     std::cout << "int: ";
