@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/07 16:51:59 by mjiam         #+#    #+#                  #
-#    Updated: 2020/09/10 14:44:30 by mjiam         ########   odam.nl          #
+#    Updated: 2020/09/10 15:19:24 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,16 @@ $(NAME): $(OBJ) $(HEADER)
 
 run:
 	@$(MAKE)
-	@./$(NAME)
+	./$(NAME) 0
+	@echo "-----------"
+	./$(NAME) nan
+	@echo "-----------"
+	./$(NAME) -inf
+	@echo "-----------"
+	./$(NAME) 42.0f
+	@echo "-----------"
+	./$(NAME) c
+	@echo "-----------"
 
 %.o: %.cpp
 	@$(CC) $(FLAGS) -c $< -o $@
