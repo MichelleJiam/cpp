@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/07 16:51:59 by mjiam         #+#    #+#                  #
-#    Updated: 2020/09/14 20:01:48 by mjiam         ########   odam.nl          #
+#    Updated: 2020/09/14 19:56:18 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,6 @@ OBJ		= 	$(SRC:.cpp=.o)
 CC		= 	clang++
 
 FLAGS	= 	-Wall -Wextra -Werror -std=c++98
-
-ifdef AWESOME
-SRC		+= 	Awesome.cpp
-HEADER	+= 	Awesome.hpp
-endif
 
 ifdef DEBUG
 FLAGS	+=	-fsanitize=address -fno-omit-frame-pointer
@@ -48,10 +43,6 @@ run:
 	@$(MAKE)
 	@./$(NAME)
 
-awesome: $(OBJ)
-	@$(MAKE) AWESOME=1
-	@./$(NAME)
-
 %.o: %.cpp
 	@$(CC) $(FLAGS) -c $< -o $@
 
@@ -61,7 +52,7 @@ debug: $(OBJ) $(HEADER)
 
 clean:
 	@echo "$(BLUE)Cleaning$(RESET)"
-	@rm -rf $(OBJ) Awesome.o
+	@rm -rf $(OBJ)
 
 fclean: clean
 	@echo "$(BLUE)Clean af$(RESET)"
