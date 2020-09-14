@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 17:29:20 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/14 16:50:05 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/14 17:53:05 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void    *serialize(void) {
     std::cout << std::endl << n << std::endl;
     for (int i = 12; i < 20; i++)
         std::cout << serialized[i];
-    std::cout << "\nSize of raw serialized data: " << sizeof(serialized) << std::endl;
+    std::cout << std::endl;
     return reinterpret_cast<void*>(serialized);
 }
