@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 17:29:26 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/09 19:00:53 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/14 15:46:40 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <ctime> // srand
 #include <cstdlib> // srand on Linux
+#include <cstring> // memcpy
 #include <iostream> // cout & string
 
 struct Data {
