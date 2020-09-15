@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 19:18:39 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/14 19:34:56 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/15 15:50:52 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int Awesome::get_n(void) {
 	return this->_n;
 }
 
-std::ostream& operator<<(std::ostream& o, Awesome& a) {
+std::ostream &operator<<(std::ostream &o, Awesome &a) {
 	o	<< a.get_n() << std::endl;
 	return o;
 }

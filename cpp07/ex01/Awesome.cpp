@@ -6,48 +6,21 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 19:18:39 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/14 19:34:56 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/15 15:52:43 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Awesome.hpp"
 
-Awesome::Awesome( int n ) : _n( n ) {
+Awesome::Awesome( void ) : _n( 42 ) {
+    return;
 }
 
-bool Awesome::operator==( Awesome const & rhs ) const {
-    return (this->_n == rhs._n);
-}
-
-bool Awesome::operator!=( Awesome const & rhs ) const {
-    return (this->_n != rhs._n);
-}
-
-bool Awesome::operator>( Awesome const & rhs ) const {
-    return (this->_n > rhs._n);
-}
-
-bool Awesome::operator<( Awesome const & rhs ) const {
-    return (this->_n < rhs._n);
-}
-
-bool Awesome::operator>=( Awesome const & rhs ) const {
-    return (this->_n >= rhs._n);
-}
-
-bool Awesome::operator<=( Awesome const & rhs ) const {
-    return (this->_n <= rhs._n);
-}
-
-void Awesome::print_n(void) {
-	std::cout << this->_n << std::endl;
-}
-
-int Awesome::get_n(void) {
+int Awesome::get(void) const {
 	return this->_n;
 }
 
-std::ostream& operator<<(std::ostream& o, Awesome& a) {
-	o	<< a.get_n() << std::endl;
+std::ostream &operator<<(std::ostream &o, Awesome const &a) {
+	o	<< a.get();
 	return o;
 }

@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 19:44:39 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/14 20:02:53 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/15 15:53:33 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 template <typename T>
 void    iter(T *array, size_t length, void (*f)(T const &element)) {
-    for (size_t i = 0; i < length; i++)
+    for (size_t i = 0; i < length && array; i++)
         f(array[i]);
     return;
 }
@@ -34,8 +34,11 @@ int main(void) {
     ::iter(f, 4, printme);
     ::iter(s, 4, printme);
 
-    Awesome     a[] = {42, 24, 12, 6, 3};
+    // std::cout << "\n--- Awesome test ---\n";
+    // int         tab[] = {0,1,2,3,4};
+    // Awesome     tab2[5];
 
-    ::iter(a, 5, printme);
+    // ::iter(tab, 5, printme);
+    // ::iter(tab2, 5, printme);
     return 0;
 }

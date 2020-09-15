@@ -6,15 +6,15 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/07 16:51:59 by mjiam         #+#    #+#                  #
-#    Updated: 2020/09/09 17:36:28 by mjiam         ########   odam.nl          #
+#    Updated: 2020/09/15 17:49:14 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	serialkiller
+NAME	= 	array
 
-SRC		= 	main.cpp deserialize.cpp serialize.cpp
+SRC		= 	main.cpp
 
-HEADER	= 	serialize.hpp
+HEADER	= 	Array.hpp Array.ipp
 
 OBJ		= 	$(SRC:.cpp=.o)
 

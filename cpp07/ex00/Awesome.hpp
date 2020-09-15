@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 19:17:34 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/14 19:34:44 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/15 15:50:39 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ private:
     int _n;
 };
 
-std::ostream& operator<<(std::ostream& o, Awesome& a);
+std::ostream &operator<<(std::ostream &o, Awesome &a);
 
 #endif
