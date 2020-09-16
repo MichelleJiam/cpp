@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/15 17:49:26 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/15 19:13:30 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/16 20:20:30 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ Array<T>::~Array(void) {
 }
 
 template <typename T>
-Array<T>::Array(Array const &other) : _array(NULL), _n(other.n) {
+Array<T>::Array(Array const &other) : _array(NULL), _n(other._n) {
 	this->_array = this->_deepcopy(other);
-	return *this;
+	return;
 }
 
 template <typename T>
