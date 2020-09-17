@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 18:43:53 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/02 18:12:21 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:22:21 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ public:
     bool                getSigned(void) const;
 
     void                beSigned(Bureaucrat const &bureaucrat);
-    void                gradeTry(int execgrade, int signgrade);
 
     class GradeTooHighException : public std::exception {
     public:
@@ -43,6 +42,7 @@ public:
 
 private:
     Form(void);
+    void                _gradeTry(int execgrade, int signgrade);
     
     std::string const   _name;
     bool                _signed;

@@ -6,13 +6,15 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 18:47:29 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/03 16:18:38 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 15:44:07 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMY_REQUEST_FORM_H
 #define ROBOTOMY_REQUEST_FORM_H
 
+#include <ctime> // rand
+#include <cstdlib> // rand on Linux
 #include "Form.hpp"
 
 class   RobotomyRequestForm : public Form {

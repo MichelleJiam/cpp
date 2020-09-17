@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 18:51:38 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/02 17:29:22 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:22:28 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ public:
 
     void                upGrade(void);
     void                downGrade(void);
-    void                gradeTry(int grade);
 
     class GradeTooHighException : public std::exception {
     public:
@@ -42,6 +41,7 @@ public:
 
 private:
     Bureaucrat(void);
+    void                _gradeTry(int grade);
 
     std::string const   _name;
     int                 _grade;

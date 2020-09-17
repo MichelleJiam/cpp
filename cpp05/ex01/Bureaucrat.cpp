@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 18:51:23 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/02 18:44:28 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:22:21 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ Bureaucrat::Bureaucrat(void) {
 }
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name) {
-    gradeTry(grade);
+    _gradeTry(grade);
     return;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &other) : _name(other._name) {
-    gradeTry(other._grade);
+    _gradeTry(other._grade);
     return;
 }
 
@@ -33,7 +33,7 @@ Bureaucrat::~Bureaucrat(void) {
 
 Bureaucrat          &Bureaucrat::operator=(Bureaucrat const &other) {
     if (this != &other)
-        gradeTry(other._grade);
+        _gradeTry(other._grade);
     return *this;
 }
 
@@ -52,16 +52,16 @@ std::string const   Bureaucrat::getName(void) const {
 }
 
 void                Bureaucrat::upGrade(void) {
-    gradeTry(this->_grade - 1);
+    _gradeTry(this->_grade - 1);
     return;
 }
 
 void                Bureaucrat::downGrade(void) {
-    gradeTry(this->_grade + 1);
+    _gradeTry(this->_grade + 1);
     return;
 }
 
-void                Bureaucrat::gradeTry(int grade) {
+void                Bureaucrat::_gradeTry(int grade) {
     try {
         if (grade < 1)
             throw GradeTooHighException();

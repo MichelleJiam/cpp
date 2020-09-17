@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 18:44:07 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/02 18:37:51 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:22:21 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ Form::Form(void) : _execGrade(150), _signGrade(150) {
 Form::Form(std::string const &name, int execgrade, int signgrade)
         :   _name(name), _signed(false),
             _execGrade(execgrade), _signGrade(signgrade) {
-    gradeTry(execgrade, signgrade);
+    _gradeTry(execgrade, signgrade);
     return;
 }
 
 Form::Form(Form const &other)
         :   _name(other._name), _signed(other.getSigned()),
             _execGrade(other._execGrade), _signGrade(other._signGrade) {
-    gradeTry(other._execGrade, other._signGrade);
+    _gradeTry(other._execGrade, other._signGrade);
     return;
 }
 
@@ -37,7 +37,7 @@ Form::~Form(void) {
 Form                &Form::operator=(Form const &other) {
     if (this != &other) {
         this->_signed = other._signed;
-        gradeTry(other._execGrade, other._signGrade);
+        _gradeTry(other._execGrade, other._signGrade);
     }
     return *this;
 }
@@ -81,7 +81,7 @@ void                Form::beSigned(Bureaucrat const &bureaucrat) {
     return;
 }
 
-void                Form::gradeTry(int execgrade, int signgrade) {
+void                Form::_gradeTry(int execgrade, int signgrade) {
     try {
         if (signgrade < 1 || execgrade < 1)
             throw GradeTooHighException();

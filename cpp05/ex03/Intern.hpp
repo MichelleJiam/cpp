@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:45:11 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/03 18:50:07 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:23:36 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define INTERN_H
 
 #include <iostream>
-#include <locale>
+#include <locale> // std::tolower
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -35,9 +35,9 @@ public:
     };
 
 private:
-    Form        *_forms[4];
+    std::string _convertName(std::string name);
 
-    std::string convertName(std::string name);
+    Form        *_forms[4];
 };
 
 #endif

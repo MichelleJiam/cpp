@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:45:17 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/07 16:50:00 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:23:20 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Intern  &Intern::operator=(Intern const &other) {
     return *this;
 }
 
-std::string Intern::convertName(std::string name) {
+std::string Intern::_convertName(std::string name) {
     char        charstr[name.length() + 1];
 
     for (int i = 0; name[i]; i++)
@@ -49,7 +49,7 @@ Form    *Intern::makeForm(std::string const &name, std::string const &target) {
         this->_forms[2] = new ShrubberyCreationForm(target);
         this->_forms[3] = NULL;
         for (int i = 0; i < 3; i++) {
-            if (convertName(this->_forms[i]->getName()) == convertName(name))
+            if (_convertName(this->_forms[i]->getName()) == _convertName(name))
                 form = this->_forms[i];
         }
         if (!form)
