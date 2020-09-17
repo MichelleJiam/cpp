@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 18:50:55 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/07 16:50:06 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 17:19:48 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ int main(void) {
     someFacelessBureaucrat.signForm(*form);
     someFacelessBureaucrat.executeForm(*form);
 
+    someRandomIntern.shredForms();
     std::cout << std::endl << "Attempting to make form <garbage collection>"
         << std::endl;
-    someRandomIntern.makeForm("garbage collection", "Trashman");
+    form = someRandomIntern.makeForm("garbage collection", "Trashman");
+    someRandomIntern.shredForms();
     form = someRandomIntern.makeForm("robotomy request", "Marvin");
     std::cout << *form;
     someFacelessBureaucrat.signForm(*form);

@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:45:11 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/17 16:23:36 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 17:16:47 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     ~Intern(void);
 
     Form        *makeForm(std::string const &name, std::string const &target);
+    void        shredForms(void);
 
     class UnknownFormException : public std::exception {
     public:

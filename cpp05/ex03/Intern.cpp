@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:45:17 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/17 16:23:20 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 17:20:52 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ Intern::Intern(Intern const &other) {
 }
 
 Intern::~Intern(void) {
-    for (int i = 0; i < 3; i++)
-        delete this->_forms[i];
+    if (*this->_forms)
+        this->shredForms();
     return;
 }
 
@@ -61,6 +61,12 @@ Form    *Intern::makeForm(std::string const &name, std::string const &target) {
     }
     std::cout << "Intern creates <" << form->getName() << ">" << std::endl;
     return form;
+}
+
+void    Intern::shredForms(void) {
+    for (int i = 0; i < 3; i++)
+        delete this->_forms[i];
+    return;
 }
 
 char const  *Intern::UnknownFormException::what(void) const throw() {
