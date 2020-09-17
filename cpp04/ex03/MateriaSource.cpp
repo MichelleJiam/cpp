@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/31 15:12:04 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/31 17:40:23 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:17:36 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,19 @@ MateriaSource::MateriaSource(MateriaSource const &src) {
 }
 
 MateriaSource::~MateriaSource(void) {
-    this->destroyMateria();
+    this->_destroyMateria();
     return;
 }
 
 MateriaSource   &MateriaSource::operator=(MateriaSource const &rhs) {
     if (this != &rhs) {
-        this->destroyMateria();
+        this->_destroyMateria();
         for (int i = 0; i < 4; i++) {
             if (rhs._materia[i])
                 this->_materia[i] = rhs._materia[i]->clone();
         }
     }
     return *this;
-}
-
-void            MateriaSource::destroyMateria(void) {
-    for (int i = 0; i < 4; i++) {
-        if (this->_materia[i])
-            delete this->_materia[i];
-        this->_materia[i] = NULL;
-    }
-    return;
 }
 
 void            MateriaSource::learnMateria(AMateria *materia) {
@@ -71,4 +62,13 @@ AMateria        *MateriaSource::createMateria(std::string const &type) {
             return this->_materia[i]->clone();
     }
     return NULL;
+}
+
+void            MateriaSource::_destroyMateria(void) {
+    for (int i = 0; i < 4; i++) {
+        if (this->_materia[i])
+            delete this->_materia[i];
+        this->_materia[i] = NULL;
+    }
+    return;
 }

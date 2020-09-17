@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 18:02:32 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/31 17:43:50 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:14:44 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,19 @@ unsigned int        AMateria::getXP(void) const {
     return this->_xp;
 }
 
-void                AMateria::setType(std::string const &type) {
+void                AMateria::use(ICharacter &target) {
+    (void)target;
+    this->_setXP(this->_xp + 10);
+    std::cout << "Skill XP gained. Current skill level: " << this->_xp << std::endl;
+    return;
+}
+
+void                AMateria::_setType(std::string const &type) {
     this->_type = type;
     return;
 }
 
-void                AMateria::setXP(unsigned int n) {
+void                AMateria::_setXP(unsigned int n) {
     this->_xp = n;
-    return;
-}
-
-void                AMateria::use(ICharacter &target) {
-    (void)target;
-    this->setXP(this->_xp + 10);
-    std::cout << "Skill XP gained. Current skill level: " << this->_xp << std::endl;
     return;
 }

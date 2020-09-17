@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 17:40:15 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/31 17:42:08 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:13:45 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ public:
 
     std::string const   &getType(void) const;
     unsigned int        getXP(void) const;
-    void                setType(std::string const &type);
-    void                setXP(unsigned int n);
 
     virtual AMateria    *clone(void) const = 0;
     virtual void        use(ICharacter &target);
 
 private:
     AMateria(void);
+    void                _setType(std::string const &type);
+    void                _setXP(unsigned int n);
 
     unsigned int        _xp;
     std::string         _type;

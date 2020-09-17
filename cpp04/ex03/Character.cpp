@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/27 18:28:46 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/08/31 17:40:56 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 16:15:37 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ Character::Character(Character const &src) {
 }
 
 Character::~Character(void) {
-    this->destroyMateria();
+    this->_destroyMateria();
     return;
 }
 
 Character           &Character::operator=(Character const &rhs) {
     if (this != &rhs) {
         this->_name = rhs._name;
-        this->destroyMateria();
+        this->_destroyMateria();
         for (int i = 0; i < 4; i++) {
             if (rhs._materia[i])
                 this->_materia[i] = rhs._materia[i]->clone();
@@ -46,15 +46,6 @@ Character           &Character::operator=(Character const &rhs) {
 
 std::string const   &Character::getName(void) const {
     return this->_name;
-}
-
-void                Character::destroyMateria(void) {
-    for (int i = 0; i < 4; i++) {
-        if (this->_materia[i])
-            delete this->_materia[i];
-        this->_materia[i] = NULL;
-    }
-    return;
 }
 
 void                Character::equip(AMateria *m) {
@@ -85,5 +76,14 @@ void                Character::unequip(int idx) {
 void                Character::use(int idx, ICharacter &target) {
     if (idx >= 0 && idx < 4 && this->_materia[idx])
         this->_materia[idx]->use(target);
+    return;
+}
+
+void                Character::_destroyMateria(void) {
+    for (int i = 0; i < 4; i++) {
+        if (this->_materia[i])
+            delete this->_materia[i];
+        this->_materia[i] = NULL;
+    }
     return;
 }
