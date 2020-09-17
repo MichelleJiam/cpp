@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Array.hpp                                          :+:    :+:            */
+/*   Awesome.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/15 17:42:30 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/17 13:45:28 by mjiam         ########   odam.nl         */
+/*   Created: 2020/09/14 19:17:34 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/09/15 15:51:17 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_H
-#define ARRAY_H
+#ifndef AWESOME_H
+# define AWESOME_H
 
-template <typename T>
-class Array {
+#include <iostream>
+
+class Awesome {
 public:
-	Array(void);
-	Array(unsigned int n);
-	~Array(void);
-	Array(Array const &other);
-	Array &operator=(Array const &other);
-	T &operator[](unsigned int index);
-	T const &operator[](unsigned int index) const; // for use with const objects
+    Awesome( void );
 
-	unsigned int	size(void) const;
+    int     get(void) const;
 
 private:
-	T				*_array;
-	unsigned int	_n;
-
-	T				*_deepcopy(Array const &other);
+    int _n;
 };
 
-#include "Array.ipp"
+std::ostream &operator<<(std::ostream &o, Awesome const &a);
 
 #endif

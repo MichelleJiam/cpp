@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/15 17:49:26 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/16 20:20:30 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 13:45:37 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ Array<T>	&Array<T>::operator=(Array const &other) {
 
 template <typename T>
 T			&Array<T>::operator[](unsigned int index) {
+	if (index >= this->_n)
+		throw std::exception();
+	return this->_array[index];
+}
+
+template <typename T>
+T const		&Array<T>::operator[](unsigned int index) const {  // for use with const objects
 	if (index >= this->_n)
 		throw std::exception();
 	return this->_array[index];

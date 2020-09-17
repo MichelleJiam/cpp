@@ -6,15 +6,15 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/07 16:51:59 by mjiam         #+#    #+#                  #
-#    Updated: 2020/09/15 17:49:14 by mjiam         ########   odam.nl          #
+#    Updated: 2020/09/17 13:28:50 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= 	array
 
-SRC		= 	main.cpp
+SRC		= 	main.cpp Awesome.cpp
 
-HEADER	= 	Array.hpp Array.ipp
+HEADER	= 	Array.hpp Array.ipp Awesome.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 

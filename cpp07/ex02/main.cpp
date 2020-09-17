@@ -6,15 +6,17 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/15 17:42:14 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/16 20:24:38 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/17 13:32:17 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream> // cout
 #include "Array.hpp"
+#include "Awesome.hpp"
 
 int	main(void) {
 	Array<int>	empty_array;
+	
 	std::cout << "--- Empty array ---" << std::endl;
 	std::cout << "Size of empty array: " << empty_array.size() << std::endl;
 	try {
@@ -26,6 +28,7 @@ int	main(void) {
 	}
 
 	Array<int>	i_array(4);
+
 	std::cout << "\n--- Int array: default initialization ---" << std::endl;
 	for (unsigned int i = 0; i < i_array.size(); i++)
 		std::cout << i_array[i] << std::endl;
@@ -42,6 +45,7 @@ int	main(void) {
 	}
 
 	Array<std::string>	str_array(3);
+
 	str_array[0] = "Hello";
 	str_array[1] = "world";
 	str_array[2] = "!";
@@ -57,6 +61,7 @@ int	main(void) {
 	}
 
 	Array<int>	i_array2(i_array);
+
 	std::cout << "\n--- Int array: by copy constructor ---" << std::endl;
 	std::cout << "Original array before value change:" << std::endl;
 	for (unsigned int i = 0; i < i_array.size(); i++)
@@ -68,5 +73,19 @@ int	main(void) {
 	std::cout << "Copy array values:" << std::endl;
 	for (unsigned int i = 0; i < i_array2.size(); i++)
 		std::cout << i_array2[i] << std::endl;
+
+	Array<Awesome>	awe_array(3);
+
+	std::cout << "\n--- Awesome array ---" << std::endl;
+	std::cout << "Size of Awesome array: " << awe_array.size() << std::endl;
+	for (unsigned int i = 0; i < awe_array.size(); i++)
+		std::cout << awe_array[i] << std::endl;
+	try {
+		std::cout << "Trying to access index 3:" << std::endl;
+		std::cout << awe_array[3] << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cerr << "Index given is out of limits" << std::endl;
+	}
 	return 0;
 }
