@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   easyfind.hpp                                       :+:    :+:            */
+/*   span.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/17 17:34:39 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/18 21:43:48 by mjiam         ########   odam.nl         */
+/*   Created: 2020/09/18 21:57:36 by mjiam         #+#    #+#                 */
+/*   Updated: 2020/09/18 23:33:41 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASY_FIND_H
-#define EASY_FIND_H
+#ifndef SPAN_H
+#define SPAN_H
 
-#include <algorithm> // find
-#include <exception> // std::except
+#include <exception>
+#include <list>
 
-template <typename T>
-typename T::iterator easyfind(T &container, int findme) {
-    typename T::iterator    it;
+class Span {
+public:
+	Span(unsigned int N);
+	Span(Span const &other);
+	Span &operator=(Span const &other);
+	~Span(void);
 
-    it = find(container.begin(), container.end(), findme);
-    if (it == container.end())
-        throw std::exception();
-    return it;
-}
+	void			addNumber(int num);
+	template <typename T>
+	void			addNumber(T begin, T end) {
+		
+	}
+	int				shortestSpan(void);
+	int				longestSpan(void);
+
+private:
+	Span(void);
+
+	std::list<int>	_numbers;
+	unsigned int	_limit;
+};
 
 #endif

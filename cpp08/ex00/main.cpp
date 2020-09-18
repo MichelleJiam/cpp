@@ -6,40 +6,27 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 17:35:58 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/18 20:08:47 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/18 21:33:15 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstdlib> // rand
-#include <iostream> // cout
-#include <list>
-#include <vector>
 #include "easyfind.hpp"
-
-template <typename T>
-void    display(T const &element) {
-    std::cout << element << std::endl;
-    return;
-}
+#include "fill_n_run.hpp"
 
 int main(void) {
-    std::list<int>              i_lst;
-    std::list<int>::iterator    it;
-    int                         findme;
+    std::list<int>      i_lst;
+    std::vector<int>    i_vec;
+    std::deque<int>     i_deq;
+    std::list<char>     c_lst;
 
     srand(time(NULL));
-    for (int i = 0; i < 5; i++)
-        i_lst.push_back(rand() % 100);
-    std::cout << "Contents of int list:" << std::endl;
-    for_each(i_lst.begin(), i_lst.end(), display<int>);
-    findme = rand() % 100;
-    std::cout << "Int to find: " << findme << std::endl;
-    try {
-        it = easyfind(i_lst, findme);
-        std::cout << "Needle found!" << std::endl;
-    }
-    catch (std::exception const &e) {
-        std::cerr << "Needle not found in haystack" << std::endl;
-    }
+    std::cout << "--- Testing with list ---" << std::endl;
+    fillnrun(i_lst);
+    std::cout << "\n--- Testing with vector ---" << std::endl;
+    fillnrun(i_vec);
+    std::cout << "\n--- Testing with deque ---" << std::endl;
+    fillnrun(i_deq);
+    std::cout << "\n--- Testing with char list ---" << std::endl;
+    fillnrun(c_lst);
     return 0;
 }

@@ -6,15 +6,15 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/07 16:51:59 by mjiam         #+#    #+#                  #
-#    Updated: 2020/09/18 20:23:50 by mjiam         ########   odam.nl          #
+#    Updated: 2020/09/18 21:52:33 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	easyfind
+NAME	= 	span
 
-SRC		= 	main.cpp
+SRC		= 	main.cpp span.cpp
 
-HEADER	= 	easyfind.hpp fill_n_run.hpp
+HEADER	= 	span.hpp
 
 OBJ		= 	$(SRC:.cpp=.o)
 
