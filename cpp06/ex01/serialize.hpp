@@ -6,14 +6,14 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 17:29:26 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/17 15:38:08 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/18 18:15:08 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZE_H
 #define SERIALIZE_H
 
-#include <ctime> // rand
+#include <climits> // INT_MAX
 #include <cstdlib> // rand on Linux
 #include <cstring> // memcpy
 #include <iostream> // cout & string

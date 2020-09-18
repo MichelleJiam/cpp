@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/09 17:29:20 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/14 17:53:05 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/18 18:31:23 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void    *serialize(void) {
         serialized[i] = alnum[rand() % 62];
         serialized[i + 12] = alnum[rand() % 62];
     }
-    int n = rand();
+    int n = rand() % INT_MAX;
     memcpy(serialized + 8, &n, sizeof(n));
     std::cout << "Data generated:\n";
     for (int i = 0; i < 8; i++)

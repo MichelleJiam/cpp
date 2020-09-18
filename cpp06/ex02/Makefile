@@ -6,7 +6,7 @@
 #    By: mjiam <mjiam@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/09/07 16:51:59 by mjiam         #+#    #+#                  #
-#    Updated: 2020/09/17 14:29:59 by mjiam         ########   odam.nl          #
+#    Updated: 2020/09/18 18:19:02 by mjiam         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,4 +63,4 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE) all
 
-.PHONY: all run clean fclean re
+.PHONY: all run debug clean fclean re
