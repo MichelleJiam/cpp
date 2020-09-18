@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 17:34:39 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/17 18:04:46 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/18 19:55:47 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 #include <exception> // std::except
 
 template <typename T>
-typename T::iterator easyfind(T const &container, int const &findme) {
+typename T::iterator easyfind(T &container, int findme) {
     typename T::iterator    it;
 
-    it = std::find(container.begin(), container.end(), findme);
+    it = find(container.begin(), container.end(), findme);
     if (it == container.end())
         throw std::exception();
     return it;
