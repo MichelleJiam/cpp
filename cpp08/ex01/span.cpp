@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 21:52:02 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/19 00:03:15 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/19 23:02:30 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ Span::Span(unsigned int N) : _limit(N) {
 }
 
 Span::Span(Span const &other)
-	: _limit(other._limit), _numbers(other._numbers) {
+	: _numbers(other._numbers), _limit(other._limit) {
 	return;
 }
 
-Span	&Span::operator=(Span const &other) {
+Span			&Span::operator=(Span const &other) {
 	if (this != &other) {
 		this->_limit = other._limit;
 		this->_numbers = other._numbers;
@@ -37,17 +37,39 @@ Span::~Span(void) {
 	return;
 }
 
-void	Span::addNumber(int num) {
+unsigned int	Span::getLimit(void) const {
+	return this->_limit;
+}
+
+void			Span::addNumber(int num) {
 	if (this->_numbers.size() >= this->_limit)
 		throw std::exception();
 	this->_numbers.push_back(num);
 	return;
 }
 
-int		Span::shortestSpan(void) {
-	this->_numbers.sort()
+int				Span::shortestSpan(void) {
+	if (this->_numbers.empty() || this->_numbers.size() == 1)
+		throw std::exception();
+	std::sort(this->_numbers.begin(), this->_numbers.end());
+	return this->_numbers.at(1) - this->_numbers.at(0);
 }
 
-int		Span::longestSpan(void) {
-	
+int				Span::longestSpan(void) {
+	if (this->_numbers.empty() || this->_numbers.size() == 1)
+		throw std::exception();
+	std::vector<int>::iterator	min, max;
+	min = std::min_element(this->_numbers.begin(), this->_numbers.end());
+	max = std::max_element(this->_numbers.begin(), this->_numbers.end());
+	return *max - *min;
+}
+
+void			Span::printElements(int start, int amount) const {
+	if (amount + start > static_cast<int>(this->_numbers.size()))
+		std::cerr << "Amount to print goes out of bounds" << std::endl;
+	else {
+		for (int i = start; i < start + amount; i++)
+			std::cout << this->_numbers.at(i) << std::endl;
+	}
+	return;
 }
