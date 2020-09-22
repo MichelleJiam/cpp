@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 17:50:15 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/18 18:44:45 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/09/22 20:20:52 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,12 +140,27 @@ Type    Convert::detectType(std::string &input) {
         return kDouble;
     }
     for (size_t i = 0; i < input.length(); i++) {
-        if (isdigit(input[i]) && type != kDouble && type != kFloat)
+        if ((input[i] == '-' && i != 0) || (!isdigit(input[i]) &&
+            input[i] != '.' && input[i] != 'f' && input[i] != '-'))
+            return type = kInvalid;
+        else if (isdigit(input[i]) && type == kInvalid)
             type = kInt;
-        else if (input[i] == '.' && type == kInt)
-            type = kDouble;
-        else if (input[i] == 'f' && type == kInt)
-            type = kFloat;
+        // else if (input[i] == '.' && type == kInt)
+        //     type = kDouble;
+        // else if (input[i] == 'f' && type == kDouble)
+        //     type = kFloat;
+        else if (input[i] == '.') {
+            if (type == kInt || type == kInvalid)
+                type = kDouble;
+            else
+                return type = kInvalid;
+        }
+        else if (input[i] == 'f') {
+            if (type == kDouble)
+                type = kFloat;
+            else
+                return type = kInvalid;
+        }
     }
     return type;
 }
