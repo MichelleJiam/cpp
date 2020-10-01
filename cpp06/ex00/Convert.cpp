@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 17:50:15 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/09/22 20:20:52 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/10/01 14:33:58 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,10 +145,6 @@ Type    Convert::detectType(std::string &input) {
             return type = kInvalid;
         else if (isdigit(input[i]) && type == kInvalid)
             type = kInt;
-        // else if (input[i] == '.' && type == kInt)
-        //     type = kDouble;
-        // else if (input[i] == 'f' && type == kDouble)
-        //     type = kFloat;
         else if (input[i] == '.') {
             if (type == kInt || type == kInvalid)
                 type = kDouble;
