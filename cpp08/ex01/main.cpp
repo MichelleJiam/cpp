@@ -6,7 +6,7 @@
 /*   By: mjiam <mjiam@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 21:52:46 by mjiam         #+#    #+#                 */
-/*   Updated: 2020/10/01 15:34:23 by mjiam         ########   odam.nl         */
+/*   Updated: 2020/10/01 15:39:47 by mjiam         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	limittest(void) {
 	Span				sp = Span(0);
 
 	std::cout << "addNumber to container with limit 0:" << std::endl;
-	sp = Span(0);
 	try {
 		sp.addNumber(420);
 		std::cout << "Contents of sp: " << std::endl;
